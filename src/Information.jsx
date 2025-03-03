@@ -1,6 +1,5 @@
 import petlogo from "./assets/pet-logo.png"
 import "./Information.css"
-import dogImage from "./assets/DogImage.png"
 export default function Information(props) {
   return(
     <>
@@ -9,7 +8,6 @@ export default function Information(props) {
 
       <div className="infoCardBg"></div>
 
-      <img className="dogImage" src={dogImage} alt="doggo"></img>
       <p className="dogName">{props.name}</p>
       <button className="dogbreed">{props.breed}</button>
       <button className="dogcolor">{props.color}</button>
