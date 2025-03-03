@@ -2,7 +2,7 @@
 import { useState } from "react";
 import QrScanner from "qr-scanner";
 
-const QRDecoder = () => {
+const QRDecoder = ({ onDecode }) => {
   const [base64String, setBase64String] = useState("");
   const [decodedText, setDecodedText] = useState(null);
 
@@ -19,6 +19,7 @@ const QRDecoder = () => {
         try {
           const result = await QrScanner.scanImage(img);
           setDecodedText(result);
+          onDecode(result); // Send decoded text to MainComponent
         } catch (error) {
           setDecodedText("Invalid QR code or failed to decode.");
         }
